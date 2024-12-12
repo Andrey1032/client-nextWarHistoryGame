@@ -1,0 +1,12 @@
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 32px;
+
+    background-color: var(--foreground);
+
+    &__link {
+        color: var(--background)
+    }
+}
