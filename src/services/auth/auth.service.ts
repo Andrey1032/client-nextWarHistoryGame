@@ -17,12 +17,12 @@ class AuthService {
 
         saveTokenStorage(
             EnumTokens.ACCESS_TOKEN,
-            response.data?.access_token,
+            response.data?.accessToken,
             new Date().getTime() + 1 * 60 * 1000
         );
         saveTokenStorage(
             EnumTokens.REFRESH_TOKEN,
-            response.data?.refresh_token
+            response.data?.refreshToken
         );
 
         return response;
@@ -36,12 +36,12 @@ class AuthService {
 
         saveTokenStorage(
             EnumTokens.ACCESS_TOKEN,
-            response.data?.access_token,
+            response.data?.accessToken,
             new Date().getTime() + 1 * 60 * 1000
         );
         saveTokenStorage(
             EnumTokens.REFRESH_TOKEN,
-            response.data?.refresh_token
+            response.data?.refreshToken
         );
 
         return response;

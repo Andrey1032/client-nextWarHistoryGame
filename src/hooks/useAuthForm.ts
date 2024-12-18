@@ -1,10 +1,12 @@
+import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { authService } from "@/services/auth/auth.service";
 
 import { IAuthForm } from "@/shared/types/auth.interface";
-import { PUBLIC_URL } from "@/config/url.config";
+import { PRIVATE_URL, PUBLIC_URL } from "@/config/url.config";
+import { getUserData } from "@/services/auth/auth-token.service";
 
 export function useAuthForm(isReg?: boolean, refresh?: boolean) {
     const router = useRouter();
@@ -22,11 +24,12 @@ export function useAuthForm(isReg?: boolean, refresh?: boolean) {
         if (refresh) {
             return authService
                 .main("refpass", data)
-                .then(() =>
+                .then(() => {
                     alert(
                         "На вашу почту было отправлено сообщение с дальнейшими указаниями!"
-                    )
-                )
+                    );
+                    router.push(PUBLIC_URL.auth("signIn"));
+                })
                 .catch(() =>
                     form.setError("apiError", {
                         type: "custom",
@@ -42,7 +45,10 @@ export function useAuthForm(isReg?: boolean, refresh?: boolean) {
 
         return authService
             .main(isReg ? "registration" : "login", data)
-            .then(() => router.push(PUBLIC_URL.home()))
+            .then((data) => {
+                const user = getUserData(data?.data?.accessToken);
+                router.push(PRIVATE_URL.home("", user?.role));
+            })
             .catch((e) =>
                 form.setError("apiError", {
                     type: "custom",

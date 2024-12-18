@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <body className={`${inter.variable}`}>
-                <main>{children}</main>
+                {children}
             </body>
         </html>
     );

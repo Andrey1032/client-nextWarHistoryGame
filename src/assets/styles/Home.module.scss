@@ -1,0 +1,47 @@
+.home {
+    font-family: var(--font-family-inter);
+
+    &__container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__content {
+        max-width: 50%;
+        max-height: 60%;
+        align-items: center;
+
+        font-style: italic;
+        line-height: 1.5em;
+        font-size: 2vw;
+    }
+    &__title {
+        margin-bottom: 6vh;
+        padding-bottom: 25px;
+        border-bottom: 2px solid black;
+        line-height: 0.95;
+    }
+
+    &__description {
+        margin: 0;
+        text-indent: 1.5em;
+        text-align: justify;
+    }
+
+    &__description-footer {
+        font-weight: 600;
+        margin: 5vh auto 0;
+        text-align: center;
+    }
+
+    &__slider-image {
+        max-width: 40%;
+        max-height: 60%;
+    }
+}

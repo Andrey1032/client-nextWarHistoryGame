@@ -1,0 +1,68 @@
+@import "../../assets/styles/mixins";
+
+.list {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    justify-content: center;
+    gap: 40px;
+
+
+    overflow-y: auto;
+    @include scrollbar;
+
+    &__card {
+        position: relative;
+
+    }
+
+    &__card-lock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+}
+
+.card {
+    height: 280px;
+    width: 200px;
+    padding: 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        position: relative;
+        text-align: center;
+    }
+
+    &:hover {
+        box-shadow: 0 0 5px 5px var(--background);
+    }
+}
+
+.card_small {
+    height: 200px;
+
+    .card__title {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(120%);
+        color: var(--background);
+
+    }
+}
+
+.card_award {
+    background-color: rgba(255, 255, 255, 0.292);
+}

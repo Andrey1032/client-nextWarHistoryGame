@@ -1,8 +1,9 @@
+@use "../assets/styles/mixins";
+
 @use "../components/Nav/Nav.module.scss";
 @use "../components/Slider/Slider.module.scss";
-@use "../components/ui/Form/Form.module.scss";
-@use "./\(studentLayout\)/home.module.scss";
-@use "./\(studentLayout\)/auth/auth.module.scss";
+@use "../assets/styles/Form.module.scss";
+@use "../components/MyLayout/MyLayout.module.scss";
 
 .container {
     padding-left: 32px;
@@ -26,10 +27,7 @@ body {
     color: var(--foreground);
     background: var(--background);
 
-    font-family: Arial, Helvetica, sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-family-inter);
 }
 
 * {
@@ -43,28 +41,25 @@ a {
     text-decoration: none;
 }
 
-.loader {
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.689);
 
-    font-size: 24px;
-    color: var(--foreground)
-}
 
 .text {
-    font-family: var(--font-inter);
+    font-family: var(--font-family-inter);
     font-size: 16px;
     font-weight: 300;
     letter-spacing: -0.04em;
 }
 
+.text_pos-center{
+    text-align: center;
+}
+
 .text_cr {
     color: var(--red);
+}
+
+.text_cw {
+    color: var(--background);
 }
 
 .text_cg {
@@ -91,31 +86,31 @@ a {
     font-weight: 700;
 }
 
-.text_font-14 {
+.text_size-14 {
     font-size: 14px;
 }
 
-.text_font-20 {
+.text_size-20 {
     font-size: 20px;
 }
 
-.text_font-24 {
+.text_size-24 {
     font-size: 24px;
 }
 
-.text_font-36 {
+.text_size-36 {
     font-size: 36px;
 }
 
-.text_font-40 {
+.text_size-40 {
     font-size: 40px;
 }
 
-.text_font-48 {
+.text_size-48 {
     font-size: 48px;
 }
 
-.text_font-96 {
+.text_size-96 {
     font-size: 96px;
 }
 

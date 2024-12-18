@@ -1,12 +1,8 @@
 import { getContentType } from "./api.helper";
 import { SERVER_URL } from "@/config/api.config";
-import {
-    EnumTokens,
-    getAccessToken,
-    removeFromStorage,
-} from "@/services/auth/auth-token.service";
-import { authService } from "@/services/auth/auth.service";
+import { getAccessToken } from "@/services/auth/auth-token.service";
 import axios, { CreateAxiosDefaults } from "axios";
+import { useRouter } from "next/navigation";
 
 const options: CreateAxiosDefaults = {
     baseURL: SERVER_URL,
@@ -29,22 +25,11 @@ axiosWithAuth.interceptors.request.use((config) => {
 axiosWithAuth.interceptors.response.use(
     (config) => config,
     async (error) => {
-        const originalRequest = error.config;
-
-        if (error?.response?.status === 401 || !error.config._isRetry) {
-            originalRequest._isRetry = true;
-            try {
-                await authService.getNewTokens();
-                return axiosWithAuth.request(originalRequest);
-            } catch {
-                removeFromStorage([
-                    EnumTokens.ACCESS_TOKEN,
-                    EnumTokens.REFRESH_TOKEN,
-                ]);
-            }
+        if (error?.response?.status === 401) {
         }
 
         throw error;
     }
 );
+
 export { axiosClassic, axiosWithAuth };

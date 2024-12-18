@@ -30,7 +30,7 @@ export default function Input({
         <>
             <input
                 {...field}
-                className="form__input text text_font-20 text_w-300 text_let-spac-2"
+                className="form__input text text_size-20 text_w-300 text_let-spac-2"
                 type={type}
                 placeholder={placeholder}
                 autoComplete={autoComplete}
