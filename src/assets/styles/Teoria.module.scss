@@ -18,9 +18,40 @@
     }
 
     &__list {
+        display: flex;
         width: 100%;
         padding: 0 10px;
         height: 85%;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: max-content;
+        text-wrap: nowrap;
+        margin: 40px 0;
+        padding: 10px 30px;
+        height: max-content;
+
+        border-right: 1px solid var(--background);
+        border-radius: 5px;
+    }
+
+    &__nav-item {
+        position: relative;
+        cursor: pointer;
+        color: var(--background);
+
+        text-transform: capitalize;
+
+        &_active::before {
+            position: absolute;
+            top: 45%;
+            left: -20px;
+            transform: translateY(-50%);
+            content: "➤";
+        }
     }
 
     &__content {

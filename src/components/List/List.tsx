@@ -31,7 +31,11 @@ export default function List({
                     } ${card_className
                         ?.map((className) => `${style[`${className}`]}`)
                         .join(" ")}`}
-                    onClick={() => router.push(PRIVATE_URL.teoria(`${id}`))}
+                    onClick={() =>
+                        item.lock
+                            ? router.push(PRIVATE_URL.awards(`/${id}`))
+                            : router.push(PRIVATE_URL.teoria(`/${id}`))
+                    }
                 >
                     {item?.lock === false && (
                         <Image

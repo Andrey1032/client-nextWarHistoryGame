@@ -1,0 +1,39 @@
+.stats {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--background);
+    font-family: cursive;
+
+    &__title {
+        font-size: 20px;
+        color: var(--background);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 5px;
+        
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            transform: translateY(-50%);
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 7px;
+            background-color: var(--background);
+        }
+    }
+}

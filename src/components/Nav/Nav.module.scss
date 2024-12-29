@@ -11,6 +11,44 @@
     &__link {
         width: max-content;
         color: var(--background);
+        max-width: 220px;
+        text-wrap: wrap;
+    }
+
+    &__stats-title {
+        font-size: 20px;
+        font-family: cursive;
+        color: var(--background);
+    }
+
+    &__stats {
+        font-family: cursive;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 200px;
+    }
+
+    &__stats-item {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 200px;
+        column-gap: 5px;
+        color: var(--background);
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: var(--background);
+
+        }
     }
 
     &__logo {
@@ -54,14 +92,13 @@
 .nav-vertical {
     z-index: 1000;
     position: relative;
-    width: 274px;
+    max-width: 274px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px 32px;
-
     background-color: var(--foreground);
 
     box-shadow: 0 0 10px 5px var(--background);

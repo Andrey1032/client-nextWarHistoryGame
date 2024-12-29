@@ -71,18 +71,33 @@ const Nav = ({
                     >
                         Награды
                     </Link>
-                    <Link
+                    {/* <Link
                         className={style["nav__link"]}
                         href={PRIVATE_URL.stats("")}
                     >
                         Статистика
-                    </Link>
+                    </Link> */}
                     <Link
                         className={style["nav__link"]}
                         href={PRIVATE_URL.top("")}
                     >
                         Рейтинг
                     </Link>
+                </div>
+                <div className={style["nav__content"]}>
+                    <h4 className={style["nav__stats-title"]}>Статистика</h4>
+                    <div className={style["nav__stats"]}>
+                        <div className={style["nav__stats-item"]}>
+                            <p>Звание</p> Рядовой
+                        </div>
+                        <div className={style["nav__stats-item"]}>
+                            <p>Находится на этапе</p>
+                            Начало ВОВ
+                        </div>
+                        <div className={style["nav__stats-item"]}>
+                            <p>Ранений</p> 0
+                        </div>
+                    </div>
                 </div>
                 <div className={style["nav__content"]}>
                     <Link
