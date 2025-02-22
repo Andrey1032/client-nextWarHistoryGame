@@ -1,3 +1,4 @@
+
 import MyLayout from "@/components/MyLayout/MyLayout";
 import React from "react";
 
@@ -12,6 +13,7 @@ export default function Layout({
         <MyLayout role="STUDENT">
             {children}
             {modal}
+
         </MyLayout>
     );
 }

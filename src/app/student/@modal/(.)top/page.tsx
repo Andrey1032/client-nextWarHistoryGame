@@ -1,9 +1,9 @@
 "use client";
 
-import Modal from "@/components/Modal/Modal";
+import Modal from "@/components/ModalPage/ModalPage";
 
 import { useState } from "react";
-import style from "@/assets/styles/Top.module.scss";
+import style from "@/styles/Top.module.scss";
 
 const Page = () => {
     const groupName = "21Пинж(б)РПиС";

@@ -2,7 +2,6 @@ import { getContentType } from "./api.helper";
 import { SERVER_URL } from "@/config/api.config";
 import { getAccessToken } from "@/services/auth/auth-token.service";
 import axios, { CreateAxiosDefaults } from "axios";
-import { useRouter } from "next/navigation";
 
 const options: CreateAxiosDefaults = {
     baseURL: SERVER_URL,

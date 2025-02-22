@@ -1,0 +1,50 @@
+.test {
+    position: relative;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    color: var(--background);
+
+
+    &__content {
+        padding: 20px 10px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__answers {
+        padding: 10px 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        gap: 10px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__answer {
+        border: 1px solid var(--background);
+        border-radius: 5px;
+        cursor: pointer;
+
+    }
+
+    &__response {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

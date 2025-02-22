@@ -48,7 +48,7 @@ export default function List({
                     )}
 
                     <Image
-                        src={item?.url}
+                        src={item?.url || "/paper.png"}
                         alt="картинка"
                         fill
                         objectFit="contain"

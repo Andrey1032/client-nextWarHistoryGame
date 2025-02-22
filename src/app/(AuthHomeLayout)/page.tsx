@@ -1,5 +1,5 @@
 import Slider from "@/components/Slider/Slider";
-import style from "@/assets/styles/home.module.scss";
+import style from "@/styles/home.module.scss";
 import Image from "next/image";
 import { cookies } from "next/headers";
 import { PRIVATE_URL } from "@/config/url.config";

@@ -1,6 +1,6 @@
 "use client";
 
-import style from "./Modal.module.scss";
+import style from "./ModalPage.module.scss";
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -14,9 +14,7 @@ export default function Modal({ children }: { children: React.ReactNode }) {
                     router.back();
                 }}
             ></button>
-            <div className={style["modal__content"]}>
-                {children}
-            </div>
+            <div className={style["modal__content"]}>{children}</div>
         </div>
     );
 }

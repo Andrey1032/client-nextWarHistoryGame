@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import style from "@/assets/styles/Teoria.module.scss";
-import Modal from "@/components/Modal/Modal";
+import style from "@/styles/Teoria.module.scss";
+import Modal from "@/components/ModalPage/ModalPage";
 import List from "@/components/List/List";
 import Link from "next/link";
 

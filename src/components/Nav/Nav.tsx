@@ -49,7 +49,7 @@ const Nav = ({
                         alt="logotip"
                     />
                 </Link>
-                <div className={`${style["nav__content"]} ${style["h-100"]} `}>
+                <div className={`${style["nav__content"]}`}>
                     <Link
                         className={style["nav__link"]}
                         href={PRIVATE_URL.home("", "STUDENT")}
@@ -71,12 +71,6 @@ const Nav = ({
                     >
                         Награды
                     </Link>
-                    {/* <Link
-                        className={style["nav__link"]}
-                        href={PRIVATE_URL.stats("")}
-                    >
-                        Статистика
-                    </Link> */}
                     <Link
                         className={style["nav__link"]}
                         href={PRIVATE_URL.top("")}

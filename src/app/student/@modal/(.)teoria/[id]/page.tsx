@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import style from "@/assets/styles/Teoria.module.scss";
-import Modal from "@/components/Modal/Modal";
+import style from "@/styles/Teoria.module.scss";
+import Modal from "@/components/ModalPage/ModalPage";
 import Reader from "@/components/Reader/Reader";
 
 export default function Page() {

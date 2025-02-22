@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import style from "@/assets/styles/Top.module.scss";
+import style from "@/styles/Top.module.scss";
 const Page = () => {
     const groupName = "21Пинж(б)РПиС";
     const [group] = useState([

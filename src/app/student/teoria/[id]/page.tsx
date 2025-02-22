@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import style from "@/assets/styles/Teoria.module.scss";
+import style from "@/styles/Teoria.module.scss";
 import Reader from "@/components/Reader/Reader";
 
 export default function Page() {

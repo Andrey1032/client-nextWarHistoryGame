@@ -5,7 +5,7 @@ import { useAuthForm } from "@/hooks/useAuthForm";
 import Button from "@/components/ui/Form/form-elements/Button";
 import { ErrorMessage } from "@hookform/error-message";
 
-import style from "@/assets/styles/Auth.module.scss";
+import style from "@/styles/Auth.module.scss";
 import { useRouter } from "next/navigation";
 import { API_URL } from "@/config/api.config";
 import Loader from "@/components/Loader/Loader";

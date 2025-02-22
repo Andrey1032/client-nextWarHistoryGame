@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import style from "@/assets/styles/Teoria.module.scss";
+import style from "@/styles/Teoria.module.scss";
 import List from "@/components/List/List";
 import Link from "next/link";
 
@@ -72,7 +72,6 @@ export default function Page() {
             subDocuments: [
                 {
                     title: "Оборона Киева 1",
-                    url: "/paper.png",
                 },
 
                 {

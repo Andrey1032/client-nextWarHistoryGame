@@ -2,6 +2,7 @@
 
 import Cookies from "js-cookie";
 import style from "./MyLayout.module.scss";
+
 import dynamic from "next/dynamic";
 const DynamicNav = dynamic(() => import("@/components/Nav/Nav"), {
     ssr: false,
@@ -20,7 +21,9 @@ export default function MyLayout({
             <header>
                 <DynamicNav role={role} accessToken={accessToken} />
             </header>
-            <main>{children}</main>
+            <main>
+                {children}
+            </main>
         </div>
     );
 }

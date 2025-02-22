@@ -1,4 +1,4 @@
-import style from "@/assets/styles/Awards.module.scss";
+import style from "@/styles/Awards.module.scss";
 import List from "@/components/List/List";
 
 const Page = () => {
