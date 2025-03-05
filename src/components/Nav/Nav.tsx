@@ -114,12 +114,18 @@ const Nav = ({
 
     if (role === "TEACHER") {
         return (
-            <nav className={style.nav}>
+            <nav className={style["nav-vertical"]}>
                 <Link
                     className="nav__link"
                     href={PRIVATE_URL.home("", "TEACHER")}
                 >
-                    Путь к Победе
+                    <Image
+                        className={style["nav__logo"]}
+                        src={"/logo.png"}
+                        width={210}
+                        height={25}
+                        alt="logotip"
+                    />
                 </Link>
                 <Link
                     className="nav__link "
@@ -131,14 +137,15 @@ const Nav = ({
             </nav>
         );
     }
+
     return (
         <nav className={style["nav"]}>
             <Link className={style["nav__link"]} href={PUBLIC_URL.home()}>
                 <Image
                     className={style["nav__logo"]}
                     src={"/logo.png"}
-                    width={300}
-                    height={30}
+                    width={210}
+                    height={25}
                     alt="logotip"
                 />
             </Link>

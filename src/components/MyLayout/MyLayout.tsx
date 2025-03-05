@@ -21,9 +21,7 @@ export default function MyLayout({
             <header>
                 <DynamicNav role={role} accessToken={accessToken} />
             </header>
-            <main>
-                {children}
-            </main>
+            {children}
         </div>
     );
 }

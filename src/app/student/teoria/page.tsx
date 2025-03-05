@@ -96,6 +96,7 @@ export default function Page() {
                     <Link
                         href="https://www.pobediteli.ru/flash.html"
                         className={style["teoria__nav-item"]}
+                        target="_blank"
                     >
                         «Победители»
                     </Link>

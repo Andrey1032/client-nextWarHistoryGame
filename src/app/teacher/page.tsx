@@ -1,6 +1,5 @@
-
 const Page = () => {
-    return <div>teacher</div>;
+    return <div style={{width: "100%"}}>teacher</div>;
 };
 
 export default Page;
