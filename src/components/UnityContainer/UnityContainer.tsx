@@ -5,10 +5,10 @@ import style from "./UnityContainer.module.scss";
 
 export default function UnityContainer() {
     const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-        loaderUrl: "build/Documents.loader.js",
-        dataUrl: "build/webgl.data",
-        frameworkUrl: "build/build.framework.js",
-        codeUrl: "build/build.wasm",
+        loaderUrl: "build/BuildWebGl.loader.js",
+        dataUrl: "build/BuildWebGl.data.gz/webgl.data",
+        frameworkUrl: "build/BuildWebGl.framework.js.gz/build.framework.js",
+        codeUrl: "build/BuildWebGl.wasm.gz/build.wasm",
     });
     const loadingPercentage = Math.round(loadingProgression * 100);
     return (

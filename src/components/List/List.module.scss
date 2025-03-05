@@ -1,4 +1,4 @@
-@import "../../styles/mixins";
+@use "../../styles/mixins" as mixin;
 
 .list {
     position: relative;
@@ -12,7 +12,7 @@
 
 
     overflow-y: auto;
-    @include scrollbar;
+    @include mixin.scrollbar-mixin;
 
     &__card {
         position: relative;

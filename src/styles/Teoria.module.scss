@@ -1,4 +1,4 @@
-@import "./mixins";
+@use "./mixins" as mixin;
 
 .teoria {
     position: absolute;
@@ -80,7 +80,7 @@
         padding-right: 10px;
         overflow-y: auto;
 
-        @include scrollbar;
+        @include mixin.scrollbar-mixin;
     }
 
     &__reader {

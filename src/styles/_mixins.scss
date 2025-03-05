@@ -1,4 +1,4 @@
-@mixin scrollbar {
+@mixin scrollbar-mixin {
     &::-webkit-scrollbar {
         width: 6px;
         height: 6px;

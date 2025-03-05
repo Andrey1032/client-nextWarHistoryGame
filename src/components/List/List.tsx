@@ -11,7 +11,7 @@ export default function List({
     card_className,
     list_className,
 }: {
-    data: { title: string; url: string; lock?: boolean }[];
+    data: { title: string; url?: string; lock?: boolean }[];
     card_className?: string[];
     list_className?: string[];
 }) {
