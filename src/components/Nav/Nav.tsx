@@ -100,13 +100,13 @@ const Nav = ({
                     >
                         Профиль {user?.login}
                     </Link>
-                    <Link
+                    <a
                         className={style["nav__link"]}
                         href={PUBLIC_URL.auth("signIn")}
                         onClick={() => authService.logout()}
                     >
                         {accessToken ? "Выйти" : "Войти"}
-                    </Link>
+                    </a>
                 </div>
             </nav>
         );
