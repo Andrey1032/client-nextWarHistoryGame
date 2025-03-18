@@ -11,8 +11,9 @@ export const PRIVATE_URL = {
         role === "STUDENT"
             ? PRIVATE_URL.root(`/student${url}`)
             : PRIVATE_URL.root(`/teacher${url}`),
-    teoria: (url = "") => PRIVATE_URL.root(`/student/teoria${url}`),
-    awards: (url = "") => PRIVATE_URL.root(`/student/awards${url}`),
-    stats: (url = "") => PRIVATE_URL.root(`/student/stats${url}`),
-    top: (url = "") => PRIVATE_URL.root(`/student/top${url}`),
+    teoria: (url = "", role = "STUDENT") => PRIVATE_URL.home(`/teoria${url}`, role),
+    practica: (url = "") => PRIVATE_URL.home(`/practica${url}`, "TEACHER"),
+    awards: (url = "") => PRIVATE_URL.home(`/awards${url}`, "STUDENT"),
+    stats: (url = "") => PRIVATE_URL.home(`/stats${url}`, "STUDENT"),
+    top: (url = "") => PRIVATE_URL.home(`/top${url}`, "STUDENT"),
 };

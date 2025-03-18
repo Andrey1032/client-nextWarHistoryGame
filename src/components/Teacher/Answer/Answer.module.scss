@@ -1,0 +1,44 @@
+.answer {
+    padding: 10px 5px;
+    display: grid;
+    grid-template-columns: auto 15% 15%;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--foreground);
+    }
+
+    &__name {
+        font-family: inherit;
+        font-size: 14px;
+        padding: 5px;
+        text-align: start;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__correct {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+    }
+
+    &__settings {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20%;
+
+    }
+
+    &__edit {
+        cursor: pointer;
+    }
+
+    &__del {
+        cursor: pointer;
+    }
+}

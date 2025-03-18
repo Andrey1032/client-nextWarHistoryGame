@@ -39,3 +39,21 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.positive {
+    background-color: rgba(0, 255, 0, 0.404);
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: rgba(0, 255, 0, 0.738);
+    }
+}
+
+.negative {
+    background-color: rgba(255, 0, 0, 0.463);
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: rgba(255, 0, 0, 0.748);
+    }
+}

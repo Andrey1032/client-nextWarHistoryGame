@@ -17,6 +17,7 @@ const Nav = ({
 }) => {
     const [isOpen, setIsOpen] = useState(true);
     const user = getUserData(accessToken);
+
     if (role === "STUDENT") {
         return (
             <nav
@@ -47,6 +48,7 @@ const Nav = ({
                         width={210}
                         height={25}
                         alt="logotip"
+                        priority
                     />
                 </Link>
                 <div className={`${style["nav__content"]}`}>
@@ -105,7 +107,7 @@ const Nav = ({
                         href={PUBLIC_URL.auth("signIn")}
                         onClick={() => authService.logout()}
                     >
-                        {accessToken ? "Выйти" : "Войти"}
+                        Выйти
                     </a>
                 </div>
             </nav>
@@ -125,14 +127,35 @@ const Nav = ({
                         width={210}
                         height={25}
                         alt="logotip"
+                        priority
                     />
                 </Link>
+                <div className={`${style["nav__content"]}`}>
+                    <Link
+                        className={style["nav__link"]}
+                        href={PRIVATE_URL.home("", "TEACHER")}
+                    >
+                        Статистика
+                    </Link>
+                    <Link
+                        className={style["nav__link"]}
+                        href={PRIVATE_URL.practica("")}
+                    >
+                        Практические задания
+                    </Link>
+                    <Link
+                        className={style["nav__link"]}
+                        href={PRIVATE_URL.teoria("", "TEACHER")}
+                    >
+                        Теоретический материал
+                    </Link>
+                </div>
                 <Link
                     className="nav__link "
                     href={PUBLIC_URL.auth("signIn")}
                     onClick={() => authService.logout()}
                 >
-                    {accessToken ? "Выйти" : "Войти"}
+                    Выйти
                 </Link>
             </nav>
         );
@@ -147,14 +170,14 @@ const Nav = ({
                     width={210}
                     height={25}
                     alt="logotip"
+                    priority
                 />
             </Link>
             <Link
                 className={style["nav__link"]}
                 href={PUBLIC_URL.auth("signIn")}
-                onClick={() => authService.logout()}
             >
-                {accessToken ? "Выйти" : "Войти"}
+                Войти
             </Link>
         </nav>
     );

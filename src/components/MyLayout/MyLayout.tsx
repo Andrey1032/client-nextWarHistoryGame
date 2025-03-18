@@ -3,10 +3,8 @@
 import Cookies from "js-cookie";
 import style from "./MyLayout.module.scss";
 
-import dynamic from "next/dynamic";
-const DynamicNav = dynamic(() => import("@/components/Nav/Nav"), {
-    ssr: false,
-});
+import Nav from "../Nav/Nav";
+
 export default function MyLayout({
     children,
     role,
@@ -19,7 +17,7 @@ export default function MyLayout({
     return (
         <div className={role && style["my-layout"]}>
             <header>
-                <DynamicNav role={role} accessToken={accessToken} />
+                <Nav role={role} accessToken={accessToken} />
             </header>
             {children}
         </div>

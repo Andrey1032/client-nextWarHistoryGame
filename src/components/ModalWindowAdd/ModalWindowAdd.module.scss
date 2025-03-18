@@ -1,0 +1,22 @@
+.modal-window {
+
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+
+        background-color: rgba(128, 128, 128, 0.726);
+        z-index: 100;
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--foreground);
+        background-color: var(--background);
+        border-radius: 5px;
+        padding: 20px 30px;
+    }
+}

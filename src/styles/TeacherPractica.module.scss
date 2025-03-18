@@ -1,0 +1,114 @@
+.teacher-practica {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__content {
+        width: 100%;
+        border: 2px solid var(--foreground);
+        border-radius: 5px;
+    }
+
+    &__topic-header {
+        padding: 10px 5px;
+        display: grid;
+        grid-template-columns: auto 15% 15%;
+
+        border-bottom: 2px solid var(--foreground);
+
+        span:not(:first-child) {
+            text-align: center;
+        }
+    }
+
+    &__questions-header {
+        padding: 10px 5px;
+        display: grid;
+        grid-template-columns: auto 15%;
+
+        border-bottom: 2px solid var(--foreground);
+    }
+
+    &__answers-header {
+        padding: 10px 5px;
+        display: grid;
+        grid-template-columns: auto 15% 15%;
+
+        border-bottom: 2px solid var(--foreground);
+    }
+
+    &__header-count,
+    &__header-settings {
+        text-align: center;
+    }
+
+    &__button-back {
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+
+    &__add-topic,
+    &__add-question {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    &__modal-window {
+        width: 50vw;
+        height: auto;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+
+        input {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+
+
+        select {
+            position: relative;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+
+            cursor: pointer;
+        }
+    }
+
+    &__form-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
+
+        button {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+    }
+}
