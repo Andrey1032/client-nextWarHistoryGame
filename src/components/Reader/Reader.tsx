@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 import { ReactReader } from "react-reader";
 import Loader from "../Loader/Loader";
+import style from "./Reader.module.scss";
 
-const Reader = () => {
+interface IReaderComponent {
+    url: string;
+}
+
+const Reader = ({ url }: IReaderComponent) => {
     const [location, setLocation] = useState<string | number>(0);
     return (
-        <ReactReader
-            url="/Brestskai.epub"
-            location={location}
-            locationChanged={(epubcfi: string) => setLocation(epubcfi)}
-            swipeable
-            loadingView={<Loader />}
-        />
+        <div className={style["reader"]}>
+            <ReactReader
+                url={url}
+                location={location}
+                locationChanged={(epubcfi: string) => setLocation(epubcfi)}
+                swipeable
+                loadingView={<Loader />}
+            />
+        </div>
     );
 };
 export default Reader;

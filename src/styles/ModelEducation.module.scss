@@ -1,0 +1,77 @@
+.model-education {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+
+        input {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            position: relative;
+        }
+
+
+
+        select {
+            position: relative;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+
+            cursor: pointer;
+        }
+    }
+
+    &__form-settings {
+        display: flex;
+        justify-content: start;
+        gap: 20px;
+    }
+
+    &__form-settings-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__form-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
+
+        button {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+    }
+
+    &__table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__table-item {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        text-align: center;
+
+        p {
+
+            border: 1px solid black;
+        }
+    }
+}

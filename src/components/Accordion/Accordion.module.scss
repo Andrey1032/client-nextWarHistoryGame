@@ -1,0 +1,49 @@
+@use "../../styles/mixins" as mixin;
+
+.accordion {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    @include mixin.scrollbar-mixin;
+
+    &__summary {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__reader {
+        width: 70%;
+        height: 50vh;
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__images-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition-duration: 0.3s;
+        padding: 10px;
+    }
+
+    &__content-body {
+        overflow: hidden;
+    }
+
+    &__details[open]+&__content {
+        grid-template-rows: 1fr;
+    }
+}

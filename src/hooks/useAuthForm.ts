@@ -39,7 +39,10 @@ export function useAuthForm(isReg?: boolean, refresh?: boolean) {
         }
 
         if (isReg && data.password !== data.repeat_password) {
-            return alert("Пароли не совпадают!");
+            return form.setError("apiError", {
+                type: "custom",
+                message: "Пароли не совпадают!",
+            });
         }
 
         return authService
@@ -54,7 +57,7 @@ export function useAuthForm(isReg?: boolean, refresh?: boolean) {
                     message: isReg
                         ? e?.response?.data?.message ||
                           "Ошибка регистрации, попробуйте позже!"
-                        : "Не удалось авторизироваться, попробуйте позже!",
+                        : "Не удалось авторизироваться, проверьте логин или пароль или попробуйте позже!",
                 })
             );
     };

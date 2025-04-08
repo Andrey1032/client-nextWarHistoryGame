@@ -85,10 +85,7 @@ export default function Page() {
                                     style["teacher-practica__form-buttons"]
                                 }
                             >
-                                <button
-                                    type="submit"
-                                    className="positive"
-                                >
+                                <button type="submit" className="positive">
                                     добавить
                                 </button>
                                 <button

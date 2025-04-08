@@ -149,6 +149,12 @@ const Nav = ({
                     >
                         Теоретический материал
                     </Link>
+                    <Link
+                        className={style["nav__link"]}
+                        href={PRIVATE_URL.modeleducation("")}
+                    >
+                        Модель AI обучения
+                    </Link>
                 </div>
                 <Link
                     className="nav__link "

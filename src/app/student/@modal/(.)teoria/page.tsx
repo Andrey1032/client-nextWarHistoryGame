@@ -10,54 +10,54 @@ export default function Page() {
     const [currentData, setCurrentData] = useState(0);
     const data = [
         {
-            title: "Оборона Брестской крепости",
+            title: "Призыв",
             subDocuments: [
                 {
-                    title: "Оборона Брестской крепости 1",
+                    title: "Призыв 1",
                     url: "/paper.png",
                 },
                 {
-                    title: "Оборона Брестской крепости 2",
+                    title: "Призыв 2",
                     url: "/paper.png",
                 },
                 {
-                    title: "Оборона Брестской крепости 3",
+                    title: "Призыв 3",
                     url: "/paper.png",
                 },
             ],
         },
         {
-            title: "Смоленское сражение",
+            title: "Учебная часть",
             subDocuments: [
                 {
-                    title: "Смоленское сражение 1",
+                    title: "Учебная часть 1",
                     url: "/paper.png",
                 },
                 {
-                    title: "Смоленское сражение 2",
+                    title: "Учебная часть 2",
                     url: "/paper.png",
                 },
                 {
-                    title: "Смоленское сражение 3",
+                    title: "Учебная часть 3",
                     url: "/paper.png",
                 },
             ],
         },
         {
-            title: "Оборона Киева",
+            title: "Битва за Москву",
             subDocuments: [
                 {
-                    title: "Оборона Киева 1",
+                    title: "Битва за Москву 1",
                     url: "/paper.png",
                 },
 
                 {
-                    title: "Оборона Киева 2",
+                    title: "Битва за Москву 2",
                     url: "/paper.png",
                 },
 
                 {
-                    title: "Оборона Киева 3",
+                    title: "Битва за Москву 3",
                     url: "/paper.png",
                 },
             ],

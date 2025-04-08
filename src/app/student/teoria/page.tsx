@@ -20,34 +20,6 @@ export default function Page() {
                     title: "Оборона Брестской крепости 2",
                     url: "/paper.png",
                 },
-                {
-                    title: "Оборона Брестской крепости 3",
-                    url: "/paper.png",
-                },
-                {
-                    title: "Оборона Брестской крепости 4",
-                    url: "/paper.png",
-                },
-                {
-                    title: "Оборона Брестской крепости 5",
-                    url: "/paper.png",
-                },
-                {
-                    title: "Оборона Брестской крепости 6",
-                    url: "/paper.png",
-                },
-                {
-                    title: "Оборона Брестской крепости 7",
-                    url: "/paper.png",
-                },
-                {
-                    title: "Оборона Брестской крепости 8",
-                    url: "/paper.png",
-                },
-                {
-                    title: "Оборона Брестской крепости 9",
-                    url: "/paper.png",
-                },
             ],
         },
         {
