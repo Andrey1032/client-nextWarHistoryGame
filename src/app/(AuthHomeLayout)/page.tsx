@@ -6,7 +6,7 @@ import { PRIVATE_URL } from "@/config/url.config";
 import { getUserData } from "@/services/auth/auth-token.service";
 import { redirect } from "next/navigation";
 
-export default async function Home() {
+export default async function Page() {
     const slides: string[] = [
         "/home1.jpg",
         "/home2.jpg",
