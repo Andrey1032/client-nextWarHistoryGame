@@ -8,6 +8,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
     justify-content: center;
+    align-items: start;
+    align-content: start;
     gap: 40px;
 
 
@@ -29,7 +31,7 @@
 }
 
 .card {
-    height: 280px;
+    height: 200px;
     width: 200px;
     padding: 20px;
 
@@ -40,6 +42,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &__image {
+        object-fit: contain;
+    }
 
     &__title {
         position: relative;
@@ -53,6 +59,7 @@
 
 .card_small {
     height: 200px;
+    margin-bottom: 40px;
 
     .card__title {
         position: absolute;

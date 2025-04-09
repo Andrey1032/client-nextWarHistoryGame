@@ -13,16 +13,16 @@ export default function Page() {
             title: "Призыв",
             subDocuments: [
                 {
-                    title: "Призыв 1",
-                    url: "/paper.png",
+                    id: 0,
+                    name: "Призыв 1",
                 },
                 {
-                    title: "Призыв 2",
-                    url: "/paper.png",
+                    id: 1,
+                    name: "Призыв 2",
                 },
                 {
-                    title: "Призыв 3",
-                    url: "/paper.png",
+                    id: 2,
+                    name: "Призыв 3",
                 },
             ],
         },
@@ -30,16 +30,16 @@ export default function Page() {
             title: "Учебная часть",
             subDocuments: [
                 {
-                    title: "Учебная часть 1",
-                    url: "/paper.png",
+                    id: 3,
+                    name: "Учебная часть 1",
                 },
                 {
-                    title: "Учебная часть 2",
-                    url: "/paper.png",
+                    id: 4,
+                    name: "Учебная часть 2",
                 },
                 {
-                    title: "Учебная часть 3",
-                    url: "/paper.png",
+                    id: 5,
+                    name: "Учебная часть 3",
                 },
             ],
         },
@@ -47,18 +47,18 @@ export default function Page() {
             title: "Битва за Москву",
             subDocuments: [
                 {
-                    title: "Битва за Москву 1",
-                    url: "/paper.png",
+                    id: 6,
+                    name: "Битва за Москву 1",
                 },
 
                 {
-                    title: "Битва за Москву 2",
-                    url: "/paper.png",
+                    id: 7,
+                    name: "Битва за Москву 2",
                 },
 
                 {
-                    title: "Битва за Москву 3",
-                    url: "/paper.png",
+                    id: 8,
+                    name: "Битва за Москву 3",
                 },
             ],
         },

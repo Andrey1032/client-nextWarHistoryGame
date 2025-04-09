@@ -10,50 +10,55 @@ export default function Page() {
 
     const data = [
         {
-            title: "Оборона Брестской крепости",
+            title: "Призыв",
             subDocuments: [
                 {
-                    title: "Оборона Брестской крепости 1",
-                    url: "/paper.png",
+                    id: 0,
+                    name: "Призыв 1",
                 },
                 {
-                    title: "Оборона Брестской крепости 2",
-                    url: "/paper.png",
+                    id: 1,
+                    name: "Призыв 2",
+                },
+                {
+                    id: 2,
+                    name: "Призыв 3",
                 },
             ],
         },
         {
-            title: "Смоленское сражение",
+            title: "Учебная часть",
             subDocuments: [
                 {
-                    title: "Смоленское сражение 1",
-                    url: "/paper.png",
+                    id: 3,
+                    name: "Учебная часть 1",
                 },
                 {
-                    title: "Смоленское сражение 2",
-                    url: "/paper.png",
+                    id: 4,
+                    name: "Учебная часть 2",
                 },
                 {
-                    title: "Смоленское сражение 3",
-                    url: "/paper.png",
+                    id: 5,
+                    name: "Учебная часть 3",
                 },
             ],
         },
         {
-            title: "Оборона Киева",
+            title: "Битва за Москву",
             subDocuments: [
                 {
-                    title: "Оборона Киева 1",
+                    id: 6,
+                    name: "Битва за Москву 1",
                 },
 
                 {
-                    title: "Оборона Киева 2",
-                    url: "/paper.png",
+                    id: 7,
+                    name: "Битва за Москву 2",
                 },
 
                 {
-                    title: "Оборона Киева 3",
-                    url: "/paper.png",
+                    id: 8,
+                    name: "Битва за Москву 3",
                 },
             ],
         },
