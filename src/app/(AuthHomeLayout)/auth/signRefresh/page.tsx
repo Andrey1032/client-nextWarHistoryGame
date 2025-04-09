@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { API_URL } from "@/config/api.config";
 import Loader from "@/components/Loader/Loader";
 
-export default function Index() {
+export default function Page() {
     const router = useRouter();
     const { onSubmit, form, isSubmitting } = useAuthForm(false, true);
     return (
@@ -21,9 +21,7 @@ export default function Index() {
                 </h1>
                 <AuthFields form={form} refresh />
 
-                {isSubmitting && (
-                    <Loader />
-                )}
+                {isSubmitting && <Loader modal />}
 
                 <ErrorMessage errors={form.formState.errors} name="apiError" />
                 <div className="form__buttons">

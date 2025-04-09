@@ -10,7 +10,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import style from "@/styles/Auth.module.scss";
 import Loader from "@/components/Loader/Loader";
 
-export default function Index() {
+export default function Page() {
     const router = useRouter();
     const { onSubmit, form, isSubmitting } = useAuthForm();
 
@@ -22,9 +22,7 @@ export default function Index() {
                 </h1>
                 <AuthFields form={form} isReg={false} />
 
-                {isSubmitting && (
-                    <Loader />
-                )}
+                {isSubmitting && <Loader modal/>}
 
                 <ErrorMessage errors={form.formState.errors} name="apiError" />
                 <button

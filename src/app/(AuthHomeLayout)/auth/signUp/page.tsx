@@ -9,7 +9,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import style from "@/styles/Auth.module.scss";
 import Loader from "@/components/Loader/Loader";
 
-export default function Auth() {
+export default function Page() {
     const router = useRouter();
     const { onSubmit, form, isSubmitting } = useAuthForm(true);
 
@@ -20,9 +20,7 @@ export default function Auth() {
                     Регистрация
                 </h1>
                 <AuthFields form={form} isReg={true} />
-                {isSubmitting && (
-                    <Loader />
-                )}
+                {isSubmitting && <Loader modal />}
                 <ErrorMessage errors={form.formState.errors} name="apiError" />
                 <div className="form__buttons">
                     <Button

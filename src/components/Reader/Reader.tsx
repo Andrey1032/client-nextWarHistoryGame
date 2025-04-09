@@ -16,7 +16,7 @@ const Reader = ({ url }: IReaderComponent) => {
                 location={location}
                 locationChanged={(epubcfi: string) => setLocation(epubcfi)}
                 swipeable
-                loadingView={<Loader />}
+                loadingView={<Loader modal/>}
             />
         </div>
     );
