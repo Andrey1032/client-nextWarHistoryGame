@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import { Providers } from "@/providers/providerApollo";
 
 const inter = Inter({
     variable: "--font-family-inter",
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ru">
-            <body className={`${inter.variable}`}>{children}</body>
+            <body className={`${inter.variable}`}>
+                <Providers>{children}</Providers>
+            </body>
         </html>
     );
 }
