@@ -5,10 +5,19 @@ import style from "@/styles/Teoria.module.scss";
 import Modal from "@/components/ModalPage/ModalPage";
 import List from "@/components/List/List";
 import Link from "next/link";
+import { topicService } from "@/services/teoria.service";
+import { ITopic } from "@/shared/interfaces/topic.interface";
+import Loader from "@/components/Loader/Loader";
 
 export default function Page() {
     const [currentData, setCurrentData] = useState(0);
-    const data = [
+    const {
+        loading,
+        data,
+    }: { loading: boolean; data: { getTopicAll: ITopic[] } } =
+        topicService.getTopicies();
+
+    const dataTest = [
         {
             title: "Призыв",
             subDocuments: [
@@ -69,28 +78,36 @@ export default function Page() {
                 База знаний игры «Путь к Победе»
             </h1>
             <div className={style["teoria__list"]}>
-                <div className={style["teoria__nav"]}>
-                    <Link
-                        href="https://www.pobediteli.ru/flash.html"
-                        className={style["teoria__nav-item"]}
-                    >
-                        «Победители»
-                    </Link>
-                    {data?.map((teoria, id) => (
-                        <div
-                            className={`${style["teoria__nav-item"]} ${
-                                id === currentData
-                                    ? style["teoria__nav-item_active"]
-                                    : ""
-                            }`}
-                            key={id}
-                            onClick={() => setCurrentData(id)}
-                        >
-                            {teoria.title}
+                {!loading ? (
+                    <>
+                        <div className={style["teoria__nav"]}>
+                            <Link
+                                target="_blank"
+                                href="https://www.pobediteli.ru/flash.html"
+                                className={style["teoria__nav-item"]}
+                            >
+                                «Победители»
+                            </Link>
+
+                            {data.getTopicAll?.map((teoria, id) => (
+                                <div
+                                    className={`${style["teoria__nav-item"]} ${
+                                        id === currentData
+                                            ? style["teoria__nav-item_active"]
+                                            : ""
+                                    }`}
+                                    key={id}
+                                    onClick={() => setCurrentData(id)}
+                                >
+                                    {teoria.name}
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-                <List data={data[currentData].subDocuments} />
+                        <List data={data.getTopicAll[currentData].Subtopic} />
+                    </>
+                ) : (
+                    <Loader color="#ffffff" />
+                )}
             </div>
         </Modal>
     );

@@ -5,14 +5,15 @@ import style from "./List.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { PRIVATE_URL } from "@/config/url.config";
-import { IReward } from "@/shared/types/reward.interface";
+import { IReward } from "@/shared/interfaces/reward.interface";
+import { ISubtopicModel } from "@/shared/interfaces/topic.interface";
 
 export default function List({
     data,
     card_className,
     list_className,
 }: {
-    data: IReward[];
+    data: IReward[] | ISubtopicModel[];
     card_className?: string[];
     list_className?: string[];
 }) {
@@ -51,7 +52,7 @@ export default function List({
                     <Image
                         className={style["card__image"]}
                         src={
-                            item?.url
+                            "url" in item
                                 ? `${process.env.SERVER_URL}/static/${item?.url}`
                                 : "/paper.png"
                         }
