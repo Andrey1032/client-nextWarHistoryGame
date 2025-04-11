@@ -6,7 +6,7 @@ import List from "@/components/List/List";
 import Modal from "@/components/ModalPage/ModalPage";
 import React from "react";
 import { awardService } from "@/services/awards.service";
-import { IReward } from "@/shared/types/reward.interface";
+import { IReward } from "@/shared/interfaces/reward.interface";
 import Loader from "@/components/Loader/Loader";
 
 const Page = () => {

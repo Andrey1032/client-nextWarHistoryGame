@@ -1,6 +1,6 @@
 import { axiosClassic } from "@/api/api.interceptors";
 import { API_URL } from "@/config/api.config";
-import { IAuthForm, IAuthResponse } from "@/shared/types/auth.interface";
+import { IAuthForm, IAuthResponse } from "@/shared/interfaces/auth.interface";
 import {
     EnumTokens,
     removeFromStorage,

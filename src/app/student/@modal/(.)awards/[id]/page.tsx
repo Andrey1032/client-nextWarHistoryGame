@@ -5,7 +5,7 @@ import style from "@/styles/Awards.module.scss";
 import Modal from "@/components/ModalPage/ModalPage";
 import { awardService } from "@/services/awards.service";
 import Image from "next/image";
-import { IReward } from "@/shared/types/reward.interface";
+import { IReward } from "@/shared/interfaces/reward.interface";
 import Loader from "@/components/Loader/Loader";
 
 export default function Page() {

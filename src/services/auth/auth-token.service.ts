@@ -1,4 +1,4 @@
-import { IUser } from "@/shared/types/user.interface";
+import { IUser } from "@/shared/interfaces/user.interface";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 

@@ -2,7 +2,7 @@
 
 import Loader from "@/components/Loader/Loader";
 import { awardService } from "@/services/awards.service";
-import { IReward } from "@/shared/types/reward.interface";
+import { IReward } from "@/shared/interfaces/reward.interface";
 import style from "@/styles/Awards.module.scss";
 import Image from "next/image";
 import { useParams } from "next/navigation";

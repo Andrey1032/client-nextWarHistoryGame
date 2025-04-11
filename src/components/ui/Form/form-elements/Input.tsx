@@ -1,4 +1,4 @@
-import { IAuthForm } from "@/shared/types/auth.interface";
+import { IAuthForm } from "@/shared/interfaces/auth.interface";
 import { ErrorMessage } from "@hookform/error-message";
 import { HTMLInputAutoCompleteAttribute } from "react";
 import { ControllerRenderProps, FieldErrors } from "react-hook-form";

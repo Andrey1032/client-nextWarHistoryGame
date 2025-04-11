@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { authService } from "@/services/auth/auth.service";
 
-import { IAuthForm } from "@/shared/types/auth.interface";
+import { IAuthForm } from "@/shared/interfaces/auth.interface";
 import { PRIVATE_URL, PUBLIC_URL } from "@/config/url.config";
 import { getUserData } from "@/services/auth/auth-token.service";
 

@@ -1,5 +1,5 @@
 import Input from "@/components/ui/Form/form-elements/Input";
-import { IAuthForm } from "@/shared/types/auth.interface";
+import { IAuthForm } from "@/shared/interfaces/auth.interface";
 import { Controller, UseFormReturn } from "react-hook-form";
 
 interface AuthFieldsProps {

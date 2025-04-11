@@ -3,7 +3,7 @@
 import style from "@/styles/Awards.module.scss";
 import List from "@/components/List/List";
 import { awardService } from "@/services/awards.service";
-import { IReward } from "@/shared/types/reward.interface";
+import { IReward } from "@/shared/interfaces/reward.interface";
 import Loader from "@/components/Loader/Loader";
 
 const Page = () => {

@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { PRIVATE_URL, PUBLIC_URL } from "./config/url.config";
 import { EnumTokens, getUserData } from "./services/auth/auth-token.service";
 import { jwtDecode } from "jwt-decode";
-import { IUser } from "./shared/types/user.interface";
+import { IUser } from "./shared/interfaces/user.interface";
 
 export async function middleware(request: NextRequest) {
     const accessToken = request.cookies.get(EnumTokens.ACCESS_TOKEN)?.value;
