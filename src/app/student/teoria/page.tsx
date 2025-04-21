@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import style from "@/styles/Teoria.module.scss";
 import List from "@/components/List/List";
 import Link from "next/link";
-import { ITopic } from "@/shared/interfaces/topic.interface";
+import { ITopicModel } from "@/shared/interfaces/topic.interface";
 import { topicService } from "@/services/teoria.service";
 import Loader from "@/components/Loader/Loader";
 
@@ -13,7 +13,7 @@ export default function Page() {
     const {
         loading,
         data,
-    }: { loading: boolean; data: { getTopicAll: ITopic[] } } =
+    }: { loading: boolean; data: { getTopicAll: ITopicModel[] } } =
         topicService.getTopicies();
     const dataTest = [
         {

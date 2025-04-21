@@ -2,20 +2,11 @@
 import style from "./Answer.module.scss";
 import React, { useState } from "react";
 import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
-interface IAnswerComponent {
-    id: number;
-    text: string;
-    correct: boolean;
-    FileAnswer: {
-        url: string;
-    };
-}
-export default function Answer(answer: IAnswerComponent) {
-    const { topic_id } = useParams();
+import { IAnswerModel } from "@/shared/interfaces/question.interface";
+
+export default function Answer(answer: IAnswerModel) {
     const [editMode, setEditMode] = useState(false);
     const [title, setTitle] = useState(answer.text);
-
     return (
         <div key={answer.id} className={style["answer"]}>
             {editMode ? (
@@ -38,7 +29,7 @@ export default function Answer(answer: IAnswerComponent) {
             )}
 
             <div className={style["answer__correct"]} onClick={() => {}}>
-                {answer.correct ? (
+                {answer.correct === "true" ? (
                     <Image
                         src="/check-circle.svg"
                         alt="Выбрать"

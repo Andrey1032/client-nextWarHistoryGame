@@ -17,6 +17,9 @@ const getTopiciesQuery = gql`
                     }
                 }
             }
+            _count {
+                Question
+            }
         }
     }
 `;

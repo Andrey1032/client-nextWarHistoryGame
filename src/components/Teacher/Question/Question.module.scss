@@ -1,7 +1,7 @@
 .question {
     padding: 10px 5px;
     display: grid;
-    grid-template-columns: auto 15%;
+    grid-template-columns: auto 20%;
 
     &:not(:last-child) {
         border-bottom: 1px solid var(--foreground);

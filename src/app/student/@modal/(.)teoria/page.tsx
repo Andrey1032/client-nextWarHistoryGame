@@ -6,7 +6,7 @@ import Modal from "@/components/ModalPage/ModalPage";
 import List from "@/components/List/List";
 import Link from "next/link";
 import { topicService } from "@/services/teoria.service";
-import { ITopic } from "@/shared/interfaces/topic.interface";
+import { ITopicModel } from "@/shared/interfaces/topic.interface";
 import Loader from "@/components/Loader/Loader";
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
     const {
         loading,
         data,
-    }: { loading: boolean; data: { getTopicAll: ITopic[] } } =
+    }: { loading: boolean; data: { getTopicAll: ITopicModel[] } } =
         topicService.getTopicies();
 
     const dataTest = [

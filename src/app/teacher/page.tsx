@@ -1,11 +1,7 @@
-import style from "@/styles/TeacherAnalysis.module.scss";
+import style from "@/styles/TeacherPage.module.scss";
 
 const Page = () => {
-    return (
-        <div className={style["teacher-analysis"]}>
-            В разработке на беке
-        </div>
-    );
+    return <div className={style["teacher-page"]}>В разработке на беке</div>;
 };
 
 export default Page;

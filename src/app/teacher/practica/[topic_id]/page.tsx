@@ -1,8 +1,11 @@
 "use client";
+import Loader from "@/components/Loader/Loader";
 import ModalWindowAdd from "@/components/ModalWindowAdd/ModalWindowAdd";
 import Question from "@/components/Teacher/Question/Question";
 import QuestionForm from "@/components/Teacher/QuestionForm/QuestionForm";
-import style from "@/styles/TeacherPractica.module.scss";
+import { teacherService } from "@/services/teacher.service";
+import { IQuestionModel } from "@/shared/interfaces/question.interface";
+import style from "@/styles/TeacherPage.module.scss";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -12,81 +15,76 @@ export default function Page() {
     const [addQuestion, setAddQuestion] = useState(false);
     const [typeQuestion, setTypeQuestion] = useState<string | null>(null);
     const { topic_id } = useParams();
-    const questions = [
-        {
-            id: 0,
-            text: "Вопрос 1",
-            TypeMiniGame: { name: "викторина" },
-        },
-        {
-            id: 1,
-            text: "Вопрос 2",
-
-            TypeMiniGame: { name: "викторина" },
-        },
-        {
-            id: 2,
-            text: "Вопрос 3",
-
-            TypeMiniGame: { name: "викторина" },
-        },
-        {
-            id: 3,
-            text: "Вопрос 4",
-
-            TypeMiniGame: { name: "викторина" },
-        },
-    ];
+    const {
+        loading,
+        data,
+    }: {
+        loading: boolean;
+        data: { getQuestionAll: { Questions: IQuestionModel[] } };
+    } = teacherService.getQuestionAll(Number(topic_id));
     return (
-        <div className={style["teacher-practica"]}>
-            <h4 className={style["teacher-practica__title"]}>
-                <Image
-                    className={style["teacher-practica__button-back"]}
-                    src="/open-arrow.svg"
-                    alt="назад"
-                    width={25}
-                    height={25}
-                    onClick={() => router.back()}
-                />{" "}
-                Вопросы по теме &quot;Название темы&quot;
-            </h4>
-            <div className={style["teacher-practica__content"]}>
-                <div
-                    className={`${style["teacher-practica__questions-header"]}`}
-                >
-                    <span className={style["teacher-practica__header-title"]}>
-                        Текст вопроса
-                    </span>
-                    <span
-                        className={style["teacher-practica__header-settings"]}
-                    >
-                        Доступные функции
-                    </span>
-                </div>
-                {questions?.map((question) => (
-                    <Question {...question} key={question.id} />
-                ))}
-                <button
-                    className={style["teacher-practica__add-topic"]}
-                    onClick={() => setAddQuestion(true)}
-                >
-                    <Image
-                        className={style["icon-add-topic"]}
-                        src={"/plus.svg"}
-                        alt="+"
-                        width={17}
-                        height={17}
-                    />
-                    Добавить вопрос
-                </button>
-            </div>
+        <div className={style["teacher-page"]}>
+            {!loading ? (
+                <>
+                    <h4 className={style["teacher-page__title"]}>
+                        <Image
+                            className={style["teacher-page__button-back"]}
+                            src="/open-arrow.svg"
+                            alt="назад"
+                            width={25}
+                            height={25}
+                            onClick={() => router.back()}
+                        />{" "}
+                        Вопросы по теме &quot;
+                        {data.getQuestionAll?.Questions[0]?.Topic?.name}
+                        &quot;
+                    </h4>
+                    <div className={style["teacher-page__content"]}>
+                        <div
+                            className={`${style["teacher-page__topic-header"]} ${style["teacher-page__topic-header_2"]}`}
+                        >
+                            <span
+                                className={style["teacher-page__header-title"]}
+                            >
+                                Текст вопроса
+                            </span>
+                            <span
+                                className={
+                                    style["teacher-page__header-settings"]
+                                }
+                            >
+                                Доступные функции
+                            </span>
+                        </div>
+                        {data.getQuestionAll?.Questions?.map((question) => (
+                            <Question {...question} key={question.id} />
+                        ))}
+                        <button
+                            className={style["teacher-page__add-topic"]}
+                            onClick={() => setAddQuestion(true)}
+                        >
+                            <Image
+                                className={style["icon-add-topic"]}
+                                src={"/plus.svg"}
+                                alt="+"
+                                width={17}
+                                height={17}
+                            />
+                            Добавить вопрос
+                        </button>
+                    </div>
+                </>
+            ) : (
+                <Loader />
+            )}
+
             {addQuestion && (
                 <ModalWindowAdd>
-                    <div className={style["teacher-practica__modal-window"]}>
+                    <div className={style["teacher-page__modal-window"]}>
                         <h4>Форма добавления вопроса</h4>
                         <form
                             onSubmit={() => {}}
-                            className={style["teacher-practica__form"]}
+                            className={style["teacher-page__form"]}
                         >
                             <input type="text" placeholder="Текст вопроса" />
                             <label>
@@ -134,9 +132,7 @@ export default function Page() {
                             )}
 
                             <div
-                                className={
-                                    style["teacher-practica__form-buttons"]
-                                }
+                                className={style["teacher-page__form-buttons"]}
                             >
                                 <button type="submit" className="positive">
                                     добавить

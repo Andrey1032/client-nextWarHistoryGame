@@ -131,12 +131,12 @@ const Nav = ({
                     />
                 </Link>
                 <div className={`${style["nav__content"]}`}>
-                    <Link
+                    {/* <Link
                         className={style["nav__link"]}
                         href={PRIVATE_URL.home("", "TEACHER")}
                     >
                         Статистика
-                    </Link>
+                    </Link> */}
                     <Link
                         className={style["nav__link"]}
                         href={PRIVATE_URL.practica("")}

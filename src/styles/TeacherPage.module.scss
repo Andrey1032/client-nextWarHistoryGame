@@ -1,4 +1,4 @@
-.teacher-practica {
+.teacher-page {
     position: relative;
     padding: 10px;
     width: 100%;
@@ -19,8 +19,8 @@
     &__topic-header {
         padding: 10px 5px;
         display: grid;
-        grid-template-columns: auto 15% 15%;
-
+        grid-template-columns: auto 15% 20%;
+        align-items: center;
         border-bottom: 2px solid var(--foreground);
 
         span:not(:first-child) {
@@ -28,21 +28,10 @@
         }
     }
 
-    &__questions-header {
-        padding: 10px 5px;
-        display: grid;
-        grid-template-columns: auto 15%;
-
-        border-bottom: 2px solid var(--foreground);
+    &__topic-header_2 {
+        grid-template-columns: auto 20%;
     }
 
-    &__answers-header {
-        padding: 10px 5px;
-        display: grid;
-        grid-template-columns: auto 15% 15%;
-
-        border-bottom: 2px solid var(--foreground);
-    }
 
     &__header-count,
     &__header-settings {

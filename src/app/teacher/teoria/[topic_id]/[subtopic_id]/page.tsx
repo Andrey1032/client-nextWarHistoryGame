@@ -2,7 +2,7 @@
 
 import { topicService } from "@/services/teoria.service";
 import { IQuestionModel } from "@/shared/interfaces/question.interface";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import style from "@/styles/TeacherPage.module.scss";
 import Image from "next/image";

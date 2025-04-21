@@ -5,15 +5,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-interface IQuestionComponent {
-    id: number;
-    text: string;
-    TypeMiniGame: {
-        name: string;
-    };
-}
-export default function Question(question: IQuestionComponent) {
-    const {topic_id} = useParams()
+import { IQuestionModel } from "@/shared/interfaces/question.interface";
+
+export default function Question(question: IQuestionModel) {
+    const { topic_id } = useParams();
     const [editMode, setEditMode] = useState(false);
     const [title, setTitle] = useState(question.text);
     return (
