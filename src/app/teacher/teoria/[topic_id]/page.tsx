@@ -1,17 +1,21 @@
 "use client";
 
 import { topicService } from "@/services/teoria.service";
-import { IQuestionModel } from "@/shared/interfaces/question.interface";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import style from "@/styles/TeacherPage.module.scss";
 import Image from "next/image";
 import Topic from "@/components/Teacher/Topic/Topic";
 import ModalWindowAdd from "@/components/ModalWindowAdd/ModalWindowAdd";
 import Loader from "@/components/Loader/Loader";
-import { ITopicModel } from "@/shared/interfaces/topic.interface";
+import {
+    ISubtopicModel,
+    ITopicModel,
+} from "@/shared/interfaces/topic.interface";
+import { testSubtopicsData } from "../data";
 
 export default function Page() {
+    const router = useRouter();
     const { topic_id } = useParams();
 
     const [addTopic, setAddTopic] = useState(false);
@@ -22,14 +26,25 @@ export default function Page() {
         loading: boolean;
         data: { getTopicOne: ITopicModel };
     } = topicService.getOneTopic(Number(topic_id));
+
+    const testSubtopics = testSubtopicsData(Number(topic_id));
+
     return (
         <div className={style["teacher-page"]}>
             {!loading ? (
                 <>
-                    <h2 className={style["teacher-page__title"]}>
+                    <h4 className={style["teacher-page__title"]}>
+                        <Image
+                            className={style["teacher-page__button-back"]}
+                            src="/open-arrow.svg"
+                            alt="назад"
+                            width={25}
+                            height={25}
+                            onClick={() => router.back()}
+                        />{" "}
                         Выбрана тема &quot;
                         {data.getTopicOne.name}&quot;
-                    </h2>
+                    </h4>
                     <div className={style["teacher-page__content"]}>
                         <div
                             className={`${style["teacher-page__topic-header"]}`}
@@ -56,7 +71,7 @@ export default function Page() {
                                 Доступные функции
                             </span>
                         </div>
-                        {data.getTopicOne.Subtopic?.map((topic) => (
+                        {testSubtopics?.map((topic) => (
                             <Topic key={topic.id} topic={topic} type="teoria" />
                         ))}
 
@@ -65,7 +80,6 @@ export default function Page() {
                             onClick={() => setAddTopic(true)}
                         >
                             <Image
-                                className={style["icon-add-topic"]}
                                 src={"/plus.svg"}
                                 alt="+"
                                 width={17}

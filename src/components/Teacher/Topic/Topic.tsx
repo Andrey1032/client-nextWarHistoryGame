@@ -105,7 +105,7 @@ export default function Topic({
                         />
                     ) : (
                         <Link
-                            href={PRIVATE_URL.teoria(`/${topic.id}`, "TEACHER")}
+                            href={`${path}/${topic.id}`}
                             className={style["topic__name"]}
                             onKeyDown={(e) =>
                                 e.key === "Enter" && setEditMode(true)
