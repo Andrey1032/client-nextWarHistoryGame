@@ -98,9 +98,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 32px;
-    background-color: var(--foreground);
+    background-color: var(--color-blue-3);
 
-    box-shadow: 0 0 10px 5px var(--background);
+    box-shadow: 0 0 10px 5px var(--color-blue-3);
 
     transition: all 0.2s ease-in-out;
 }
