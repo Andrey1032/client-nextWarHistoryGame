@@ -5,12 +5,16 @@ import { useState } from "react";
 import MaterialForm from "./MaterialForm";
 
 export default function MaterialCard(material: ITheoryMaterialModel) {
-    const [edit, setEdit] = useState<boolean | ITheoryMaterialModel>(false);
+    const [edit, setEdit] = useState<null | ITheoryMaterialModel>(null);
+    const [check, setCheck] = useState<boolean>(false);
 
     return (
         <div className={style["material-card"]}>
-            <button className={style["material-card__used-button"]}>
-                {false ? (
+            <button
+                className={style["material-card__used-button"]}
+                onClick={() => setCheck((check) => !check)}
+            >
+                {check ? (
                     <Image
                         src="/check-circle.svg"
                         alt="используется"
@@ -47,16 +51,12 @@ export default function MaterialCard(material: ITheoryMaterialModel) {
                 />
             </div>
 
-            {edit === true ? (
-                <MaterialForm handleClick={() => setEdit(false)} type="add" />
-            ) : (
-                edit !== false && (
-                    <MaterialForm
-                        item={edit}
-                        handleClick={() => setEdit(false)}
-                        type="add"
-                    />
-                )
+            {edit !== null && (
+                <MaterialForm
+                    item={edit}
+                    handleClick={() => setEdit(null)}
+                    type="edit"
+                />
             )}
         </div>
     );

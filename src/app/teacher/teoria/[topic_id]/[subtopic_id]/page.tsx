@@ -47,24 +47,28 @@ export default function Page() {
                             data={testSubtopics.TheoryMaterial.filter(
                                 (material) => material.TypeFile.name === "book"
                             )}
+                            typeMaterial="book"
                         />
                         <MaterialList
                             title="Видео материал"
                             data={testSubtopics.TheoryMaterial.filter(
                                 (material) => material.TypeFile.name === "video"
                             )}
+                            typeMaterial="video"
                         />
                         <MaterialList
                             title="Аудио материал"
                             data={testSubtopics.TheoryMaterial.filter(
                                 (material) => material.TypeFile.name === "audio"
                             )}
+                            typeMaterial="audio"
                         />
                         <MaterialList
                             title="Графический материал"
                             data={testSubtopics.TheoryMaterial.filter(
                                 (material) => material.TypeFile.name === "image"
                             )}
+                            typeMaterial="image"
                         />
                     </div>
                 </>

@@ -29,11 +29,11 @@
     display: grid;
     grid-template-columns: max-content auto max-content;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 
     padding: 5px 10px;
     border: 1px solid var(--foreground);
-    border-radius: 15px;
+    border-radius: 10px;
 
     &__title {}
 
@@ -48,7 +48,7 @@
         cursor: pointer;
     }
 
-    &__used-button{
+    &__used-button {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -58,4 +58,42 @@
 }
 
 .material-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__form-input {}
+
+    &__form-buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__form-button {
+        width: 100%;
+        padding: 5px;
+        background-color: var(--color-blue-2);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: var(--color-blue-4)
+        }
+    }
+
+
 }
