@@ -20,7 +20,7 @@ export default function MaterialList({
         <div className={style["material-list"]}>
             <h4 className={style["material-list__title"]}>{title}:</h4>
             <div className={style["material-list__content"]}>
-                {data.map((item) => (
+                {data?.map((item) => (
                     <MaterialCard key={item.id} {...item} />
                 ))}
                 <button

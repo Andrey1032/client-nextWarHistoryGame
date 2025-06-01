@@ -31,7 +31,7 @@ export default function MaterialForm({
     switch (type) {
         case "add":
             return (
-                <ModalWindowAdd>
+                <ModalWindowAdd exit={handleClick}>
                     <div className={style["material-form"]}>
                         <h4 className={style["material-form_title"]}>
                             Форма добавления {createTitle(String(typeMaterial))}
@@ -51,18 +51,14 @@ export default function MaterialForm({
                                 className={style["material-form__form-buttons"]}
                             >
                                 <button
-                                    className={
-                                        style["material-form__form-button"]
-                                    }
+                                    className={`form-button hover-green`}
                                     type="submit"
                                     onClick={() => handleClick()}
                                 >
                                     Сохранить
                                 </button>
                                 <button
-                                    className={
-                                        style["material-form__form-button"]
-                                    }
+                                    className={`form-button hover-red`}
                                     type="button"
                                     onClick={() => handleClick()}
                                 >
@@ -75,7 +71,7 @@ export default function MaterialForm({
             );
         case "edit":
             return (
-                <ModalWindowAdd>
+                <ModalWindowAdd exit={handleClick}>
                     <div className={style["material-form"]}>
                         <h4 className={style["material-form_title"]}>
                             Форма изменения материала
@@ -97,18 +93,14 @@ export default function MaterialForm({
                                 className={style["material-form__form-buttons"]}
                             >
                                 <button
-                                    className={
-                                        style["material-form__form-button"]
-                                    }
+                                    className={`form-button hover-green`}
                                     type="submit"
                                     onClick={() => handleClick()}
                                 >
                                     Сохранить
                                 </button>
                                 <button
-                                    className={
-                                        style["material-form__form-button"]
-                                    }
+                                    className={`form-button hover-red`}
                                     type="button"
                                     onClick={() => handleClick()}
                                 >

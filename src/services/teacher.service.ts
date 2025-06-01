@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { gql } from "@apollo/client";
 
 const getQuestionAllQuery = gql`
@@ -90,6 +90,29 @@ const getQuestionAOneIdQuery = gql`
     }
 `;
 
+const updateQuestionQuery = gql`
+    mutation Mutation(
+        $updateQuestionId: Int!
+        $updateQuestionData: UpdateQuestionInput!
+    ) {
+        updateQuestion(
+            id: $updateQuestionId
+            updateQuestionData: $updateQuestionData
+        ) {
+            count
+        }
+    }
+`;
+
+const getTypeTaskQuery = gql`
+    query Query {
+        getTypeTaskAll {
+            name
+            id
+        }
+    }
+`;
+
 class TeacherService {
     getQuestionAll = (topicId: number) => {
         const { loading, error, data } = useQuery(getQuestionAllQuery, {
@@ -97,6 +120,11 @@ class TeacherService {
                 topicId: topicId,
             },
         });
+
+        return { loading, error, data };
+    };
+    getTypeTask = () => {
+        const { loading, error, data } = useQuery(getTypeTaskQuery);
 
         return { loading, error, data };
     };
@@ -108,6 +136,16 @@ class TeacherService {
         });
 
         return { loading, error, data };
+    };
+    updateQuestion = () => {
+        const [editQuestion, { data, loading, error }] = useMutation(
+            updateQuestionQuery,
+            {
+                refetchQueries: [getQuestionAllQuery],
+            }
+        );
+
+        return { editQuestion, data, loading, error };
     };
 }
 

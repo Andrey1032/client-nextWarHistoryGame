@@ -8,6 +8,12 @@
     }
 
     &__name {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        width: max-content;
+
         font-family: inherit;
         font-size: 14px;
         padding: 5px;
@@ -17,12 +23,40 @@
         cursor: pointer;
     }
 
-    &__correct {
+    &__name_edit {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+    }
+
+    &__name-input {
+        width: 100%;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 4px;
+        border: 1px solid var(--foreground);
+        border-radius: 5px;
+    }
+
+    &__correct-item {
         display: flex;
         align-items: center;
         justify-content: center;
 
+    }
+
+    &__correct-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: transparent;
+        border: none;
+        border-radius: 100%;
+
         cursor: pointer;
+
     }
 
     &__settings {
@@ -35,6 +69,12 @@
     }
 
     &__edit {
+        display: flex;
+
+        justify-content: start;
+        align-items: center;
+        border: none;
+        background: transparent;
         cursor: pointer;
     }
 

@@ -3,7 +3,8 @@
 import Loader from "@/components/Loader/Loader";
 import ModalWindowAdd from "@/components/ModalWindowAdd/ModalWindowAdd";
 import Topic from "@/components/Teacher/Topic/Topic";
-import { topicService } from "@/services/teoria.service";
+import TopicAddForm from "@/components/Teacher/Topic/TopicAddForm";
+import { teoriaService } from "@/services/teoria.service";
 import { ITopicModel } from "@/shared/interfaces/topic.interface";
 import style from "@/styles/TeacherPage.module.scss";
 import Image from "next/image";
@@ -15,7 +16,7 @@ export default function Page() {
         loading,
         data,
     }: { loading: boolean; data: { getTopicAll: ITopicModel[] } } =
-        topicService.getTopicies();
+        teoriaService.getTopicies();
 
     return (
         <div className={style["teacher-page"]}>
@@ -36,8 +37,7 @@ export default function Page() {
                             className={
                                 style["teacher-page__topic-header__count"]
                             }
-                        >
-                        </span>
+                        ></span>
                         <span
                             className={
                                 style["teacher-page__topic-header__settings"]
@@ -47,7 +47,7 @@ export default function Page() {
                         </span>
                     </div>
                     {data.getTopicAll?.map((topic) => (
-                        <Topic key={topic.id} topic={topic} type="teoria" />
+                        <Topic key={topic.id} topic={topic} type="topic" />
                     ))}
 
                     <button
@@ -68,42 +68,8 @@ export default function Page() {
                 <Loader />
             )}
             {addTopic && (
-                <ModalWindowAdd>
-                    <div className={style["teacher-page__modal-window"]}>
-                        <h4>Форма добавления темы</h4>
-                        <form
-                            onSubmit={() => {}}
-                            className={style["teacher-page__form"]}
-                        >
-                            <select
-                                name="discipline"
-                                id="discipline"
-                                defaultValue={1}
-                            >
-                                <option value="1" disabled>
-                                    Выберете дисциплину
-                                </option>
-                                <option value="2">Дисциплина 1</option>
-                                <option value="3">Дисциплина 2</option>
-                                <option value="4">Дисциплина 3</option>
-                            </select>
-                            <input type="text" placeholder="Название темы" />
-                            <div
-                                className={style["teacher-page__form-buttons"]}
-                            >
-                                <button type="submit" className="positive">
-                                    добавить
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={() => setAddTopic(false)}
-                                    className="negative"
-                                >
-                                    Отмена
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <ModalWindowAdd exit={() => setAddTopic(false)}>
+                    <TopicAddForm exitMode={() => setAddTopic(false)} />
                 </ModalWindowAdd>
             )}
         </div>

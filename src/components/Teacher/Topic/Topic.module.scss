@@ -8,13 +8,34 @@
     }
 
     &__name {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        width: max-content;
+        
         font-family: inherit;
         font-size: 14px;
         padding: 5px;
         text-align: start;
         border: none;
         background-color: transparent;
-        cursor: pointer;
+        cursor: pointer;    
+    }
+
+    &__name_edit {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__name-input {
+        width: 100%;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 4px;
+        border: 1px solid var(--foreground);
+        border-radius: 5px;
     }
 
     &__count {
@@ -31,6 +52,11 @@
     }
 
     &__edit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background: transparent;
         cursor: pointer;
     }
 
