@@ -11,6 +11,9 @@
 
     color: var(--background);
 
+    &__question {
+        font-size: 24px;
+    }
 
     &__content {
         padding: 20px 10px;
@@ -35,11 +38,32 @@
         text-align: center;
     }
 
+    &__answers_sortable {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+
+    }
+
     &__answer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
         border: 1px solid var(--background);
         border-radius: 5px;
         cursor: pointer;
 
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.523);
+        }
+    }
+
+    &__answer_noimg {
+        font-size: 44px;
     }
 
     &__response {

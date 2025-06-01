@@ -18,6 +18,8 @@
     --color-blue-2: #1f9ce4;
     --color-blue-3: #3e60c1;
     --color-blue-4: #5983fc;
+    --color-green: #00ff00bc;
+    --color-red: #ff0000bf;
 }
 
 html,
@@ -44,20 +46,28 @@ a {
     text-decoration: none;
 }
 
-.positive {
-    background-color: rgba(0, 255, 0, 0.404);
-    transition: all 0.2s;
+
+.form-button {
+    width: 100%;
+    padding: 5px;
+    background-color: var(--color-blue-2);
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: all .25s;
 
     &:hover {
-        background-color: rgba(0, 255, 0, 0.738);
+        background-color: var(--color-blue-4);
     }
-}
 
-.negative {
-    background-color: rgba(255, 0, 0, 0.463);
-    transition: all 0.2s;
+    &.hover-green:hover {
+        background-color: var(--color-green);
+        color: var(--foreground);
+    }
 
-    &:hover {
-        background-color: rgba(255, 0, 0, 0.748);
+    &.hover-red:hover {
+        background-color: var(--color-red);
     }
 }
