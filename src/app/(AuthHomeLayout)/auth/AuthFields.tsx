@@ -14,7 +14,12 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
             <Controller
                 control={form.control}
                 name="email"
-                rules={{ required: true }}
+                rules={{
+                    required: {
+                        value: true,
+                        message: "Заполните поле",
+                    },
+                }}
                 render={({ field }) => (
                     <Input
                         field={field}
@@ -33,7 +38,12 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
                     <Controller
                         control={form.control}
                         name="email"
-                        rules={{ required: true }}
+                        rules={{
+                            required: {
+                                value: true,
+                                message: "Заполните поле",
+                            },
+                        }}
                         render={({ field }) => (
                             <Input
                                 field={field}
@@ -48,7 +58,10 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
                         control={form.control}
                         name="login"
                         rules={{
-                            required: true,
+                            required: {
+                                value: true,
+                                message: "Заполните поле",
+                            },
                             minLength: {
                                 value: 4,
                                 message: "Минимальная длина логина 4 символа",
@@ -67,7 +80,10 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
                         control={form.control}
                         name="password"
                         rules={{
-                            required: true,
+                            required: {
+                                value: true,
+                                message: "Заполните поле",
+                            },
                             minLength: {
                                 value: 4,
                                 message: "Минимальная длина пароля 4 символа",
@@ -88,7 +104,10 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
                         control={form.control}
                         name="repeat_password"
                         rules={{
-                            required: true,
+                            required: {
+                                value: true,
+                                message: "Заполните поле",
+                            },
                             minLength: {
                                 value: 4,
                                 message: "Минимальная длина пароля 4 символа",
@@ -112,7 +131,10 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
                         control={form.control}
                         name="login"
                         rules={{
-                            required: true,
+                            required: {
+                                value: true,
+                                message: "Заполните поле логина",
+                            },
                         }}
                         render={({ field }) => (
                             <Input
@@ -128,7 +150,10 @@ export function AuthFields({ form, isReg = false, refresh }: AuthFieldsProps) {
                         control={form.control}
                         name="password"
                         rules={{
-                            required: true,
+                            required: {
+                                value: true,
+                                message: "Заполните поле пароля",
+                            },
                         }}
                         render={({ field }) => (
                             <Input
