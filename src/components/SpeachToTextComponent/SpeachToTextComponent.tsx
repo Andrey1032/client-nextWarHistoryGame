@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 import SpeechRecognition, {
     useSpeechRecognition,
 } from "react-speech-recognition";
-import TestButton from "../ui/Form/form-elements/TestButton/TestButton";
-import useDebounce from "@/hooks/useDebounce";
+// import TestButton from "../ui/Form/form-elements/TestButton/TestButton";
+// import useDebounce from "@/hooks/useDebounce";
 import { IAnswerModel } from "@/shared/interfaces/question.interface";
 
 import levenshtein from "fast-levenshtein";
@@ -16,7 +16,7 @@ const SpeachToTextComponent = ({
     answers,
     defaultValue,
 }: {
-    answers: IAnswerModel[];
+    answers?: IAnswerModel[];
     defaultValue: string | null;
 }) => {
     const [userAnsw, setUserAnsw] = useState(defaultValue);
@@ -30,8 +30,11 @@ const SpeachToTextComponent = ({
         {
             command: "ответ *",
             callback: (str: string) => {
-                setUserAnsw(`${compare(str, answers)}`);
-                // setUserAnsw(`${str.slice(0, -1)}`);
+                if (answers) {
+                    setUserAnsw(`${compare(str, answers)}`);
+                } else {
+                    setUserAnsw(`${str.slice(0, -1)}`);
+                }
             },
         },
     ];
