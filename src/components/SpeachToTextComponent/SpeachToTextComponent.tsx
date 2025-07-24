@@ -6,25 +6,27 @@ import React, { useEffect, useState } from "react";
 import SpeechRecognition, {
     useSpeechRecognition,
 } from "react-speech-recognition";
-// import TestButton from "../ui/Form/form-elements/TestButton/TestButton";
-// import useDebounce from "@/hooks/useDebounce";
 import { IAnswerModel } from "@/shared/interfaces/question.interface";
 
 import levenshtein from "fast-levenshtein";
+import TestButton from "../ui/Form/form-elements/TestButton/TestButton";
 
 const SpeachToTextComponent = ({
     answers,
     defaultValue,
+    // setTest,
 }: {
     answers?: IAnswerModel[];
     defaultValue: string | null;
+    // setTest?: () => void;
 }) => {
     const [userAnsw, setUserAnsw] = useState(defaultValue);
     function compare(str: string, arr: IAnswerModel[]) {
-        return arr.sort(
+        const result = arr.sort(
             (a, b) =>
                 levenshtein.get(str, a.text) - levenshtein.get(str, b.text)
-        )[0].text;
+        );
+        return result[0].text;
     }
     const commands = [
         {
@@ -39,7 +41,7 @@ const SpeachToTextComponent = ({
         },
     ];
 
-    const { listening } = useSpeechRecognition({
+    const { } = useSpeechRecognition({
         commands,
     });
     // const startListening = () =>
@@ -61,13 +63,14 @@ const SpeachToTextComponent = ({
     }, [defaultValue]);
 
     return (
-        <div>
-            <p>
-                Ваш ответ:{" "}
-                <span style={{ textDecoration: "underline" }}>
-                    {userAnsw || "_____________"}
-                </span>{" "}
-                {/* <TestButton
+        <>
+            <div>
+                <p>
+                    Ваш ответ:{" "}
+                    <span style={{ textDecoration: "underline" }}>
+                        {userAnsw || "_____________"}
+                    </span>{" "}
+                    {/* <TestButton
                     // onClick={() => {
                     //     resetTranscript();
                     //     startListening();
@@ -75,9 +78,19 @@ const SpeachToTextComponent = ({
                 >
                     {!listening ? "Ответить" : "Идет запись: "}
                 </TestButton> */}
-                (Произнесите &quot;Ответ: [ваш ответ]&quot;)
-            </p>
-        </div>
+                    (Произнесите &quot;Ответ: [ваш ответ]&quot;)
+                </p>
+            </div>
+
+            <TestButton
+                onClick={() => {
+                    // setTest();
+                    setUserAnsw(null);
+                }}
+            >
+                К следующему вопросу
+            </TestButton>
+        </>
     );
 };
 

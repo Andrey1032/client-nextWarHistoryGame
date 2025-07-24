@@ -11,7 +11,7 @@ export default function TopicAddForm({ exitMode }: { exitMode: () => void }) {
 
     useEffect(() => {
         if (isSubmitting === true) exitMode();
-    }, [onSubmit]);
+    }, [exitMode, isSubmitting, onSubmit]);
 
     return (
         <div>

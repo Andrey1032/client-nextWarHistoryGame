@@ -11,11 +11,11 @@ interface IQuestionEditForm {
     typeTaskId: number;
 }
 
-interface IQuestionAddForm {
-    text: string;
-    typeMiniGame: number;
-    typeTask: number;
-}
+// interface IQuestionAddForm {
+//     text: string;
+//     typeMiniGame: number;
+//     typeTask: number;
+// }
 
 export function useQuestionForm({
     question,

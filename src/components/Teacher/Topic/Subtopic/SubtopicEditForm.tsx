@@ -3,7 +3,7 @@ import style from "../Topic.module.scss";
 import { ISubtopicModel } from "@/shared/interfaces/topic.interface";
 import { useRef, useState } from "react";
 import { teoriaService } from "@/services/teoria.service";
-import { useOnClickOutside } from "usehooks-ts";
+// import { useOnClickOutside } from "usehooks-ts";
 
 export default function SubtopicEditForm({
     subtopic,
@@ -18,7 +18,7 @@ export default function SubtopicEditForm({
 
     const ref = useRef<HTMLDivElement>(null);
 
-    useOnClickOutside(ref, () => exitMode());
+    // useOnClickOutside(ref, () => exitMode());
 
     return (
         <div className={style["topic__name_edit"]} ref={ref}>

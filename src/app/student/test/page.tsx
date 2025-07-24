@@ -2,104 +2,75 @@
 import React, { useState } from "react";
 import style from "@/styles/Test.module.scss";
 import ModalWindow from "@/components/ModalWindow/ModalWindow";
-import Image from "next/image";
 import TestFields from "@/components/Test/TestFields";
 import { IQuestionModel } from "@/shared/interfaces/question.interface";
+import TestButton from "@/components/ui/Form/form-elements/TestButton/TestButton";
+import { testsData, trueAnswers } from "./data";
 
 export default function Page() {
-    const [test] = useState<IQuestionModel>({
-        Answer: [
-            {
-                id: 14,
-                text: "12",
-                FileAnswer: {
-                    id: 1,
-                    url: "/paper.png",
-                },
-            },
-            {
-                id: 15,
-                text: "14",
-                FileAnswer: {
-                    id: 1,
-                    url: "/paper.png",
-                },
-            },
-            {
-                id: 16,
-                text: "15",
-                FileAnswer: {
-                    id: 1,
-                    url: "/paper.png",
-                },
-            },
-            {
-                id: 17,
-                text: "16",
-                FileAnswer: {
-                    id: 1,
-                    url: "/paper.png",
-                },
-            },
-        ],
-        id: 5,
-        text: "Сколько дивизий народного ополчения сформировали москвичи для защиты столицы на дальних и ближних подступах к осени 1941 года?",
-        TypeMiniGame: {
-            name: "Викторина",
-            id: 3,
-        },
-    });
+    const [testIndex, setTestIndex] = useState<number>(0);
+    const [tests] = useState<IQuestionModel[]>(testsData);
     return (
         <ModalWindow>
-            <div className={style["test"]}>
-                <TestFields test={test}></TestFields>
-            </div>
+            {testIndex < tests.length ? (
+                <TestFields
+                    test={tests[testIndex]}
+                    setTest={() => setTestIndex((testIndex) => ++testIndex)}
+                />
+            ) : (
+                <TestResult></TestResult>
+            )}
         </ModalWindow>
     );
-
-    // switch (test.type) {
-    //     case "Викторина":
-
-    //     case "Вставить пропуск":
-    //         return (
-    //             <ModalWindow>
-    //                 <div className={style["test"]}>
-    //                     <Image
-    //                         className={style["test__image"]}
-    //                         src="/personaj.png"
-    //                         alt=""
-    //                         width={1000}
-    //                         height={1000}
-    //                         style={{ width: "40%", height: "100%" }}
-    //                     />
-    //                     <div className={style["test__content"]}>
-    //                         <div className="test__question">
-    //                             {test.question}
-    //                         </div>
-
-    //                         <div className={style["test__response"]}>
-    //                             <SpeachToTextComponent
-    //                                 defaultValue={
-    //                                     selectAnswer !== null
-    //                                         ? test.answers[selectAnswer].text
-    //                                         : null
-    //                                 }
-    //                             />
-    //                             <TestButton onClick={() => {}}>
-    //                                 К следующему вопросу
-    //                             </TestButton>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </ModalWindow>
-    //         );
-    //     case "Привести в порядок":
-    //         return <ModalWindow></ModalWindow>;
-    //     case "Сопоставление с картинкой":
-    //         return <ModalWindow></ModalWindow>;
-    //     case "Сопоставление с текстом":
-    //         return <ModalWindow></ModalWindow>;
-    //     default:
-    //         return null;
-    // }
 }
+
+const TestResult = () => {
+    const [models2] = useState(trueAnswers);
+    return (
+        <div className={style["result-page"]}>
+            <h3 className={style["result-page__title"]}>
+                Результат тестирования
+            </h3>
+            <div className={style["result-page__body"]}>
+                <div>
+                    <h4>
+                        Тема: &quot;Начало Великой Отечественной войны&quot;
+                    </h4>
+                    <h4>
+                        Дата тестирования:{" "}
+                        {new Date().toLocaleString().slice(0, 10)}
+                    </h4>
+                </div>
+                <h4>Кол-во правльных ответов: {(600/7).toFixed(1)}%</h4>
+
+                <h4>Рейтинг: &quot;100&quot;</h4>
+            </div>
+            <div className={style["result-page__table"]}>
+                <div className={style["result-page__table-item"]}>
+                    <p>Текст вопроса</p>
+                    <p>Ответ обучающегося</p>
+                    <p>Правильность</p>
+                </div>
+                {models2?.map((model) => (
+                    <div
+                        key={model.id}
+                        className={style["result-page__table-item"]}
+                    >
+                        <p>{model?.text}</p>
+                        <p>{model?.answer}</p>
+                        <p
+                            className={`${
+                                Boolean(model?.true_answer)
+                                    ? style["true-answ"]
+                                    : style["false-answ"]
+                            }`}
+                        >
+                            {Boolean(model?.true_answer) ? "+" : "-"}
+                        </p>
+                    </div>
+                ))}
+            </div>
+            <TestButton>Завершить тестирование</TestButton>
+        </div>
+    );
+};

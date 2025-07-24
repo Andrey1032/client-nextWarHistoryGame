@@ -5,7 +5,7 @@ import style from "@/styles/Teoria.module.scss";
 import Modal from "@/components/ModalPage/ModalPage";
 import List from "@/components/List/List";
 import Link from "next/link";
-import { topicService } from "@/services/teoria.service";
+import { teoriaService } from "@/services/teoria.service";
 import { ITopicModel } from "@/shared/interfaces/topic.interface";
 import Loader from "@/components/Loader/Loader";
 
@@ -15,63 +15,63 @@ export default function Page() {
         loading,
         data,
     }: { loading: boolean; data: { getTopicAll: ITopicModel[] } } =
-        topicService.getTopicies();
+        teoriaService.getTopicies();
 
-    const dataTest = [
-        {
-            title: "Призыв",
-            subDocuments: [
-                {
-                    id: 0,
-                    name: "Призыв 1",
-                },
-                {
-                    id: 1,
-                    name: "Призыв 2",
-                },
-                {
-                    id: 2,
-                    name: "Призыв 3",
-                },
-            ],
-        },
-        {
-            title: "Учебная часть",
-            subDocuments: [
-                {
-                    id: 3,
-                    name: "Учебная часть 1",
-                },
-                {
-                    id: 4,
-                    name: "Учебная часть 2",
-                },
-                {
-                    id: 5,
-                    name: "Учебная часть 3",
-                },
-            ],
-        },
-        {
-            title: "Битва за Москву",
-            subDocuments: [
-                {
-                    id: 6,
-                    name: "Битва за Москву 1",
-                },
+    // const dataTest = [
+    //     {
+    //         title: "Призыв",
+    //         subDocuments: [
+    //             {
+    //                 id: 0,
+    //                 name: "Призыв 1",
+    //             },
+    //             {
+    //                 id: 1,
+    //                 name: "Призыв 2",
+    //             },
+    //             {
+    //                 id: 2,
+    //                 name: "Призыв 3",
+    //             },
+    //         ],
+    //     },
+    //     {
+    //         title: "Учебная часть",
+    //         subDocuments: [
+    //             {
+    //                 id: 3,
+    //                 name: "Учебная часть 1",
+    //             },
+    //             {
+    //                 id: 4,
+    //                 name: "Учебная часть 2",
+    //             },
+    //             {
+    //                 id: 5,
+    //                 name: "Учебная часть 3",
+    //             },
+    //         ],
+    //     },
+    //     {
+    //         title: "Битва за Москву",
+    //         subDocuments: [
+    //             {
+    //                 id: 6,
+    //                 name: "Битва за Москву 1",
+    //             },
 
-                {
-                    id: 7,
-                    name: "Битва за Москву 2",
-                },
+    //             {
+    //                 id: 7,
+    //                 name: "Битва за Москву 2",
+    //             },
 
-                {
-                    id: 8,
-                    name: "Битва за Москву 3",
-                },
-            ],
-        },
-    ];
+    //             {
+    //                 id: 8,
+    //                 name: "Битва за Москву 3",
+    //             },
+    //         ],
+    //     },
+    // ];
     return (
         <Modal>
             <h1 className={style["teoria__title"]}>

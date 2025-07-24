@@ -6,7 +6,7 @@ import {
 } from "@/shared/interfaces/topic.interface";
 import { useRef, useState } from "react";
 import { teoriaService } from "@/services/teoria.service";
-import { useOnClickOutside } from "usehooks-ts";
+// import { useOnClickOutside } from "usehooks-ts";
 
 export default function TopicEditForm({
     topic,
@@ -19,7 +19,7 @@ export default function TopicEditForm({
     const { editTopic } = teoriaService.updateTopic(() => exitMode());
     const ref = useRef<HTMLDivElement>(null);
 
-    useOnClickOutside(ref, () => exitMode());
+    // useOnClickOutside(ref, () => exitMode());
 
     return (
         <div className={style["topic__name_edit"]} ref={ref}>

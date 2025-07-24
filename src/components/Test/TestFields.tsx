@@ -23,21 +23,25 @@ import {
 } from "@dnd-kit/sortable";
 import { SortableItem } from "./SortableItem";
 
-export default function TestFields({ test }: { test: IQuestionModel }) {
-    const [type, setType] = useState(4);
+export default function TestFields({
+    test,
+    setTest,
+}: {
+    test: IQuestionModel;
+    setTest: () => void;
+}) {
     const [selectAnswer, setSelectAnswer] = useState<number | null>(null);
-    const [items, setItems] = useState(test.Answer);
+    const [items, setItems] = useState(test?.Answer);
     const sensors = useSensors(
         useSensor(PointerSensor),
         useSensor(KeyboardSensor, {
             coordinateGetter: sortableKeyboardCoordinates,
         })
     );
-    // switch (test?.TypeMiniGame?.id) {
-    switch (type) {
+    switch (test?.TypeMiniGame?.id) {
         case 4:
             return (
-                <>
+                <div className={style["test"]}>
                     <Image
                         className={style["test__image"]}
                         src="/personaj.png"
@@ -64,8 +68,8 @@ export default function TestFields({ test }: { test: IQuestionModel }) {
                                         <Image
                                             src={answer?.FileAnswer.url}
                                             alt=""
-                                            width={200}
-                                            height={180}
+                                            width={150}
+                                            height={150}
                                         />
                                     )}
                                     <p>{answer.text}</p>
@@ -75,19 +79,17 @@ export default function TestFields({ test }: { test: IQuestionModel }) {
 
                         <div className={style["test__response"]}>
                             <SpeachToTextComponent
-                                answers = {test?.Answer}
+                                answers={test?.Answer}
                                 defaultValue={
                                     selectAnswer !== null
                                         ? test.Answer[selectAnswer].text
                                         : null
                                 }
+                                // setTest={() => setTest()}
                             />
-                            <TestButton onClick={() => setType(5)}>
-                                К следующему вопросу
-                            </TestButton>
                         </div>
                     </div>
-                </>
+                </div>
             );
         case 5:
             return (
@@ -113,9 +115,7 @@ export default function TestFields({ test }: { test: IQuestionModel }) {
                                         : null
                                 }
                             />
-                            <TestButton
-                                onClick={() => setType(6)}
-                            >
+                            <TestButton onClick={setTest}>
                                 К следующему вопросу
                             </TestButton>
                         </div>
@@ -149,7 +149,7 @@ export default function TestFields({ test }: { test: IQuestionModel }) {
                         </DndContext>
                     </div>
                     <div className={style["test__response"]}>
-                        <TestButton onClick={() => setType((type) => type + 1)}>
+                        <TestButton onClick={setTest}>
                             К следующему вопросу
                         </TestButton>
                     </div>
@@ -165,7 +165,7 @@ export default function TestFields({ test }: { test: IQuestionModel }) {
                         className={`${style["test__answers"]} ${style["test__answers_sortable"]}`}
                     ></div>
                     <div className={style["test__response"]}>
-                        <TestButton onClick={() => setType(7)}>
+                        <TestButton onClick={setTest}>
                             К следующему вопросу
                         </TestButton>
                     </div>

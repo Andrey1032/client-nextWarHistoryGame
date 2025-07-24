@@ -11,7 +11,7 @@ import MaterialList from "@/components/Teacher/Material/MaterialList";
 
 export default function Page() {
     const router = useRouter();
-    const { topic_id, subtopic_id } = useParams();
+    const {  subtopic_id } = useParams();
 
     const {
         loading,

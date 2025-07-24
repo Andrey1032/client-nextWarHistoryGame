@@ -2,7 +2,7 @@
 import style from "./Answer.module.scss";
 import { useRef, useState } from "react";
 import { teoriaService } from "@/services/teoria.service";
-import { useOnClickOutside } from "usehooks-ts";
+// import { useOnClickOutside } from "usehooks-ts";
 import { IAnswerModel } from "@/shared/interfaces/question.interface";
 
 export default function AnswerEditForm({
@@ -16,7 +16,7 @@ export default function AnswerEditForm({
     const { editTopic } = teoriaService.updateTopic(() => exitMode());
     const ref = useRef<HTMLDivElement>(null);
 
-    useOnClickOutside(ref, () => exitMode());
+    // useOnClickOutside(ref, () => exitMode());
 
     return (
         <div className={`${style["answer__name_edit"]}`} ref={ref}>

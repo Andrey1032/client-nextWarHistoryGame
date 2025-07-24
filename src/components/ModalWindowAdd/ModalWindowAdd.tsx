@@ -1,17 +1,17 @@
 "use client";
 import { useRef } from "react";
 import styles from "./ModalWindowAdd.module.scss";
-import { useOnClickOutside } from "usehooks-ts";
+// import { useOnClickOutside } from "usehooks-ts";
 
 export default function ModalWindowAdd({
     children,
-    exit,
+    // exit,
 }: {
     children?: React.ReactNode;
     exit: () => void;
 }) {
     const ref = useRef(null);
-    useOnClickOutside(ref, () => exit());
+    // useOnClickOutside(ref, () => exit());
     return (
         <div className={styles["modal-window"]}>
             <div className={styles["modal-window__overlay"]}>
